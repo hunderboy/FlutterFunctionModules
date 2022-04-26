@@ -37,6 +37,12 @@ dependencies:
 
   get: ^4.3.8                 # Getx 상태관리
   permission_handler: ^9.2.0  # 권한 처리
+  video_player: ^2.2.7          # 비디오 플레이어(Flutter Official)
+  font_awesome_flutter: ^10.1.0     # IOS 애서 Material icon 사용하는데 문제가 생겨 대체재로 활용
+
+
+
+
 
 
 dev_dependencies:
