@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_function_modules/getx_controller/controller_test_play_video.dart';
+import 'package:flutter_function_modules/video_player/controller_test_play_video.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
