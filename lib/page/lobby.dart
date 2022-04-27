@@ -68,6 +68,31 @@ class Lobby extends StatelessWidget {
                       },
                       child: const Text("상태바 변경"),
                     ),
+
+                    Container(
+                      margin: const EdgeInsets.all(10),
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.lightGreen, // background
+                          onPrimary: Colors.white, // foreground
+                        ),
+                        child: const Text("운동 플레이 기능 테스트 화면"),
+                        onPressed: () {
+                          // Get.toNamed("/TestPlayVideo");
+                          // Get.toNamed("/TestAssetsVideo");
+                          // Get.toNamed("/TestVideoPlayerApp");
+                          // Get.toNamed("/TestPlayerStateful");
+                          // Get.toNamed("/TestAnimation");
+                          // Get.toNamed("/TestListAnimation");
+                          Get.toNamed("/VideoSwichingDemo");
+                          // Get.toNamed("/VideoSwichingWithGetxVer2");
+                          /// Landscape play video 테스트
+                          // Get.toNamed("/LandscapePlayer");
+                        },
+                      ),
+                    )
+
                   ],
                 ),
               ],
