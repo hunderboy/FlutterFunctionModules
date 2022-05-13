@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
+import 'package:flutter_function_modules/video_player/video_swiching/video_swiching_demo.dart';
 import 'package:get/get.dart';
 import 'page/change_status_bar.dart';
 import 'page/custom_circle_dial_indicator.dart';
@@ -47,6 +48,12 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/ChangeStatusBar",
               page: () => const ChangeStatusBar(),
+              transition: Transition.rightToLeft),
+
+          /// 비디오플레이어 테스트
+          GetPage(
+              name: "/VideoSwichingDemo",
+              page: () => VideoSwichingDemo(),
               transition: Transition.rightToLeft),
         ]
     );

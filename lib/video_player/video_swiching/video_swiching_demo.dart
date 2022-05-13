@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:video_player/video_player.dart';
 
-class VideoPlayerDemo extends StatefulWidget {
+class VideoSwichingDemo extends StatefulWidget {
   @override
-  _VideoPlayerDemoState createState() => _VideoPlayerDemoState();
+  _VideoSwichingDemoState createState() => _VideoSwichingDemoState();
 }
-class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
+class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
 
   int index = 0;
   double _position = 0;
@@ -16,44 +16,34 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
   Map<String, VideoPlayerController> _controllers = {};
   Map<int, VoidCallback> _listeners = {};
   final Set<String> _urls = {
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4#1',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4#2',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4#3',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4#4',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4#5',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4#6',
-    // 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4#7',
     'https://resources.mora.kr/static/exercise/media/507/M20/267a1d83d7d2fbf451be5573a17cd38d.mp4',
     'https://resources.mora.kr/static/exercise/media/749/M5/ba0b4e3b8503e4d7628ae599e434ac27.mp4',
     'https://resources.mora.kr/static/exercise/media/991/M20/bf886b49f48b75ec6f52a4cc4c3df8a3.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/994/M10/598171f9921f5ddbe0427e6e22cd3574.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/631/M20/e1fb9c20ccde971dc19d2713e331f71e.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/933/M15/fc8dabc115a9340fafcb58fcf89fb4da.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/1000/M15/8c1146f5460026596593ace0761426c7.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/922/M10/20f6cb7e1394be01d2eb200e392ceb79.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/908/M15/4285af1607b6b91a5b5fc52ae6e47d2a.mp4',
-    // 'https://resources.mora.kr/static/exercise/media/907/M20/26901613dcee04449688631ea6a8d6d3.mp4',
+    'https://resources.mora.kr/static/exercise/media/994/M10/598171f9921f5ddbe0427e6e22cd3574.mp4',
+    'https://resources.mora.kr/static/exercise/media/631/M20/e1fb9c20ccde971dc19d2713e331f71e.mp4',
+    'https://resources.mora.kr/static/exercise/media/933/M15/fc8dabc115a9340fafcb58fcf89fb4da.mp4',
+    'https://resources.mora.kr/static/exercise/media/1000/M15/8c1146f5460026596593ace0761426c7.mp4',
+    'https://resources.mora.kr/static/exercise/media/922/M10/20f6cb7e1394be01d2eb200e392ceb79.mp4',
+    'https://resources.mora.kr/static/exercise/media/908/M15/4285af1607b6b91a5b5fc52ae6e47d2a.mp4',
+    'https://resources.mora.kr/static/exercise/media/907/M20/26901613dcee04449688631ea6a8d6d3.mp4',
   };
-  // final Set<String> _urls = {
-  //   'countdown',
-  //   'sample_abdominal_stretching_cobra',
-  //   'sample_ball_squeeze',
-  //   'sample_center_front_back_step',
-  //   'sample_elbow_plank',
-  //   'sample_kneeup_crunch_holding',
-  //   'sample_superman_extension',
-  // };
 
   @override
   void initState() {
     super.initState();
+    /// _urls 길이가 0 보다 크면
     if (_urls.length > 0) {
+      // 컨트롤러를 초기화 한다.
       _initController(0).then((_) {
+        // 초기화가 끝남녀
         _playController(0);
       });
     }
+    /// _urls 길이가 1 보다 크면
     if (_urls.length > 1) {
-      _initController(1).whenComplete(() => _lock = false);
+      _initController(1).whenComplete(
+              () => _lock = false
+      );
     }
   }
 
@@ -71,8 +61,8 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
         _position = pos / dur;
         _buffer = buf / dur;
       });
-      print("dur : $dur");
-      print("---------------- pos : $pos");
+      // print("dur : $dur");
+      // print("---------------- pos : $pos");
 
       if (dur - pos < 1) {
         if (index < _urls.length - 1) {
@@ -163,7 +153,6 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
 
 
 
-  /// 위젯 Build
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -171,10 +160,11 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
         systemOverlayStyle: const SystemUiOverlayStyle(
           statusBarBrightness: Brightness.light,   // ios 상태바 텍스트 컬러 = black
         ),
-        title: Text("Playing ${index + 1} of ${_urls.length}"),
+        title: Text("Playing index $index of total index ${_urls.length-1}"),
       ),
       body: Stack(
         children: <Widget>[
+          /// 비디오 플레이어
           GestureDetector(
             onLongPressStart: (_) => _controller(index)!.pause(),
             onLongPressEnd: (_) => _controller(index)!.play(),
@@ -185,6 +175,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
               ),
             ),
           ),
+          /// 버퍼 progress
           Positioned(
             child: Container(
               height: 10,
@@ -192,6 +183,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
               color: Colors.grey,
             ),
           ),
+          /// 재생 progress
           Positioned(
             child: Container(
               height: 10,
@@ -201,6 +193,7 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
           ),
         ],
       ),
+      /// 좌 우 이동 플로팅 버튼
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
@@ -213,7 +206,10 @@ class _VideoPlayerDemoState extends State<VideoPlayerDemo> {
   }
   @override
   void dispose() {
-    print("ControllerTest - onClose()");
+    print("ControllerTest - dispose()");
+    for(int i = 0; i < _urls.length; i++){
+      _controller(i)?.dispose();
+    }
     super.dispose();
   }
 }
