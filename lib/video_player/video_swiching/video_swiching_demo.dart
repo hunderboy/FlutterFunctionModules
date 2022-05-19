@@ -26,6 +26,23 @@ class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
     'https://resources.mora.kr/static/exercise/media/907/M20/26901613dcee04449688631ea6a8d6d3.mp4',
   };
 
+  // final List<String> urls_media = [
+  //   // 'https://resources.mora.kr/static/exercise/media/749/M5/ba0b4e3b8503e4d7628ae599e434ac27.mp4', // 25초 영상
+  //   // 'https://resources.mora.kr/static/exercise/media/419/M10/75f8e340956b9c2dcee18e5db30a1d87.mp4',
+  //   // 'https://resources.mora.kr/static/exercise/media/337/M10/eb188e76a91f293e7834fe69e82d66ad.mp4',
+  //   // 'https://resources.mora.kr/static/exercise/media/184/M10/f784c790f48791b98e7a649aa1363113.mp4',
+  //   // 'https://resources.mora.kr/static/exercise/media/191/M10/b831d682465a36d463d05ab5f41c33eb.mp4',
+  //   // 'https://resources.mora.kr/static/exercise/media/186/M5/6a7d12718ce08b5dd9dbc7b78dff5cbf.mp4',
+  // ];
+  // final List<String> urls_thumnail = [
+  //   // 'https://resources.mora.kr/static/exercise/media/186/MT/3e3c6f178eb6ed427c3f5cbca77d40ee.png',
+  //   // 'https://resources.mora.kr/static/exercise/media/419/MT/bf68cf2043e01be75e05483c8ad2ca4f.png',
+  //   // 'https://resources.mora.kr/static/exercise/media/337/MT/9dd1eee3a24c881a6d7d86371200a784.png',
+  //   // 'https://resources.mora.kr/static/exercise/media/184/MT/74a051dd6b6459f56060ffd22afa7782.png',
+  //   // 'https://resources.mora.kr/static/exercise/media/191/MT/c236f6c94ab0138b24a50459402ce5d4.png',
+  //   // 'https://resources.mora.kr/static/exercise/media/186/MT/3e3c6f178eb6ed427c3f5cbca77d40ee.png',
+  // ];
+
   /// key : _urls.elementAt(index) 예를 들면 'https://resources.mora.kr/static/exercise/media/507/M20/267a1d83d7d2fbf451be5573a17cd38d.mp4' 이게 Key 가 됨.
   /// value : VideoPlayerController
   /// [todo] 예시 ------------------------------------------------
@@ -110,7 +127,7 @@ class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
     });
   }
 
-  void _playController(int index) async {
+  _playController(int index) async {
     if (!_listeners.keys.contains(index)) { /// _listeners 의 key 들 중에 해당 index 값이 없는 경우
       _listeners[index] = _listenerSpawner(index); /// 추가한다.
     }
@@ -120,19 +137,19 @@ class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
     setState(() {});
   }
 
-  void _removeController(int index) {
+  _removeController(int index) {
     _controller(index)!.dispose(); // 컨트롤러 해제
     _controllers.remove(_urls.elementAt(index)); // 컨트롤러 맵에서 컨트롤러 제거
     _listeners.remove(index); // 리스너도 제거
   }
 
-  void _stopController(int index) {
+  _stopController(int index) {
     _controller(index)!.removeListener(_listeners[index]!); // 컨트롤러에서 리스너 제거
     _controller(index)!.pause();
     _controller(index)!.seekTo(Duration(milliseconds: 0));
   }
 
-  void _previousVideo() {
+  _previousVideo() {
     if (_lock || index == 0) {
       return;
     }
@@ -156,7 +173,7 @@ class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
     }
   }
 
-  void _nextVideo() async {
+  _nextVideo() async {
     /// 만약, _lock = true or index 가 마지막 인덱스 인경우
     if (_lock || index == _urls.length - 1) {
       return;
