@@ -159,30 +159,51 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
                   ),
                 ),
                 Container(
-                  child: FlatButton(
-                    color: Colors.yellow,
+                  child: ElevatedButton(
+                    child: const Text("Default Stream"),
+                    style:
+                    ElevatedButton.styleFrom(
+                      elevation: 0,
+                      primary: Colors.yellow,
+                      onPrimary: Colors.white,          // 글자색
+                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                    ),
                     onPressed: () {
                       _getValuesAndPlay(defaultStream);
                     },
-                    child: Text('Default Stream'),
                   ),
                 ),
                 Container(
-                  child: FlatButton(
-                    color: Colors.red,
+                  child: ElevatedButton(
+                    child: const Text("Video Stream 2"),
+                    style:
+                    ElevatedButton.styleFrom(
+                      elevation: 0,
+                      primary: Colors.red,
+                      onPrimary: Colors.white,          // 글자색
+                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                    ),
                     onPressed: () {
                       _getValuesAndPlay(stream2);
                     },
-                    child: Text('Video Stream 2'),
                   ),
                 ),
                 Container(
-                  child: FlatButton(
-                    color: Colors.green,
+                  child: ElevatedButton(
+                    child: const Text("Video Stream 3"),
+                    style:
+                    ElevatedButton.styleFrom(
+                      elevation: 0,
+                      primary: Colors.green,
+                      onPrimary: Colors.white,          // 글자색
+                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                    ),
                     onPressed: () {
                       _getValuesAndPlay(stream3);
                     },
-                    child: Text('Video Stream 3'),
                   ),
                 )
 

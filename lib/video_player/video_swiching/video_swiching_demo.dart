@@ -61,6 +61,8 @@ class _VideoSwichingDemoState extends State<VideoSwichingDemo> {
 
   VoidCallback _listenerSpawner(index) {
     return () {
+      print("isPlaying 1111111 : "+(_controller(index)!.value.isPlaying).toString());
+
       int dur = _controller(index)!.value.duration.inMilliseconds;
       int pos = _controller(index)!.value.position.inMilliseconds;
       // int buf = _controller(index)!.value.buffered.last.end.inMilliseconds;

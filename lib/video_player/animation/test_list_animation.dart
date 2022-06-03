@@ -34,21 +34,37 @@ class TestListAnimation extends GetView<ControllerTestListAnimation>  {
               ),
 
               Container(
-                child: FlatButton(
-                  color: Colors.yellow,
+                child:
+                ElevatedButton(
+                  child: const Text("다음영상재생"),
+                  style:
+                  ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.yellow,
+                    onPrimary: Colors.white,          // 글자색
+                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
                   onPressed: () {
                     controller.animationStart();
                   },
-                  child: Text('다음영상재생'),
                 ),
               ),
               Container(
-                child: FlatButton(
-                  color: Colors.redAccent,
+                child:
+                ElevatedButton(
+                  child: const Text("일시정지"),
+                  style:
+                  ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.redAccent,
+                    onPrimary: Colors.white,          // 글자색
+                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
                   onPressed: () {
                     controller.stop();
                   },
-                  child: Text('일시정지'),
                 ),
               ),
               const Divider(color: Colors.blue, height: 1),

@@ -53,33 +53,57 @@ class TestAssetsVideo extends GetView<ControllerTestAssetsVideo> {
                   }
               ),
               Container(
-                child: FlatButton(
-                  color: Colors.yellow,
+                child:
+                ElevatedButton(
+                  child: const Text("Video Stream 0"),
+                  style:
+                  ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.yellow,
+                    onPrimary: Colors.white,          // 글자색
+                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
                   onPressed: () {
                     controller.getValuesAndPlay(0,false);
                     print('Video Stream 0');
                   },
-                  child: Text('Video Stream 0'),
                 ),
               ),
               Container(
-                child: FlatButton(
-                  color: Colors.red,
+                child:
+                ElevatedButton(
+                  child: const Text("Video Stream 1"),
+                  style:
+                  ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.red,
+                    onPrimary: Colors.white,          // 글자색
+                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
                   onPressed: () {
                     controller.getValuesAndPlay(1,false);
                     print('Video Stream 1');
                   },
-                  child: Text('Video Stream 1'),
                 ),
               ),
               Container(
-                child: FlatButton(
-                  color: Colors.green,
+                child:
+                ElevatedButton(
+                  child: const Text("Video Stream 2"),
+                  style:
+                  ElevatedButton.styleFrom(
+                    elevation: 0,
+                    primary: Colors.green,
+                    onPrimary: Colors.white,          // 글자색
+                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+                  ),
                   onPressed: () {
                     controller.getValuesAndPlay(2,false);
                     print('Video Stream 2');
                   },
-                  child: Text('Video Stream 2'),
                 ),
               )
 
