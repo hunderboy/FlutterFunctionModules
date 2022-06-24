@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'page/change_status_bar.dart';
 import 'page/custom_circle_dial_indicator.dart';
 import 'page/lobby.dart';
+import 'page/splash/splash.dart';
 import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
 
@@ -27,8 +28,22 @@ class MyApp extends StatelessWidget {
     );
 
     return GetMaterialApp(
-        initialRoute: "/",
+        title: 'FunctionModule',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          // fontFamily: 'Pretendard',   /// 전체 Text 폰트 적용
+        ),
+        // initialRoute: "/",
+        initialRoute: "/SplashLottie",
+
         getPages: [
+
+          GetPage(
+              name: "/SplashLottie",
+              page: () => Splash(),
+              curve: const Cubic(0.4, 0.0, 0.4, 0.0),
+              transition: Transition.rightToLeft),
+
           GetPage(
               name: "/",
               page: () => const Lobby(),
