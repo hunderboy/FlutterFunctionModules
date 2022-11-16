@@ -7,4 +7,5 @@
 ## Check datail
 
 아래 블로그에 각기능에 대한 설명이 있습니다.
+- [Tistory: 개발하는 도미노스 ](https://hunderboy-ultra90.tistory.com/)
 - [Velog: dominos 의 개발 블로그 ](https://velog.io/@dominos)
