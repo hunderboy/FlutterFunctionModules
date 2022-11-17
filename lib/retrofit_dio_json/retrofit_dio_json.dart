@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-
 import 'custom_log_interceptor.dart';
 import 'data.dart';
 import 'rest_client.dart';
-
 
 class RetrofitDioJson extends StatelessWidget {
   RetrofitDioJson({Key? key}) : super(key: key);
@@ -52,7 +50,5 @@ class RetrofitDioJson extends StatelessWidget {
         ),
       ),
     );
-
   }
-
 }

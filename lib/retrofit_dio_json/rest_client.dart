@@ -3,7 +3,7 @@ import 'package:retrofit/retrofit.dart';
 
 import 'data.dart';
 
-// part 'retrofit_dio_json.dart';
+part 'rest_client.g.dart';
 
 @RestApi(baseUrl: 'https://reqres.in/api')
 abstract class RestClient {
