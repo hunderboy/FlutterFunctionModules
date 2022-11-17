@@ -9,6 +9,8 @@ import 'page/splash/splash.dart';
 import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
 
+import 'retrofit_dio_json/retrofit_dio_json.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -38,6 +40,7 @@ class MyApp extends StatelessWidget {
 
         getPages: [
 
+          /// 앱 첫 시작 로딩페이지
           GetPage(
               name: "/SplashLottie",
               page: () => Splash(),
@@ -47,6 +50,10 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/",
               page: () => const Lobby(),
+              transition: Transition.rightToLeft),
+          GetPage(
+              name: "/Retrofit_Dio_Json",
+              page: () => RetrofitDioJson(),
               transition: Transition.rightToLeft),
           GetPage(
               name: "/CustomCircleDialIndicator",

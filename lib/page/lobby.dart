@@ -30,6 +30,13 @@ class Lobby extends StatelessWidget {
                     /// 권한 예제
                     ElevatedButton(
                       onPressed: () {
+                        Get.toNamed("/Retrofit_Dio_Json");
+                      },
+                      child: const Text("Retrofit+Dio+Json"),
+                    ),
+                    /// 권한 예제
+                    ElevatedButton(
+                      onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => PermissionHandlerPage()),
