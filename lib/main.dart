@@ -10,6 +10,7 @@ import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
 
 import 'retrofit_dio_json/retrofit_dio_json.dart';
+import 'retrofit_list/retrofit_list.dart';
 
 
 void main() {
@@ -35,8 +36,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           // fontFamily: 'Pretendard',   /// 전체 Text 폰트 적용
         ),
-        // initialRoute: "/",
-        initialRoute: "/SplashLottie",
+        initialRoute: "/",
+        // initialRoute: "/SplashLottie",
 
         getPages: [
 
@@ -50,6 +51,10 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/",
               page: () => const Lobby(),
+              transition: Transition.rightToLeft),
+          GetPage(
+              name: "/Retrofit_List",
+              page: () => RetrofitList(),
               transition: Transition.rightToLeft),
           GetPage(
               name: "/Retrofit_Dio_Json",

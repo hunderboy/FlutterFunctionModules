@@ -11,4 +11,14 @@ abstract class RestClient {
 
   @GET('/users/{id}')
   Future<User> getUser({@Path() required int id});
+
+  // @GET('/users/')
+  // Future<String> namedExample(
+  //     @Query("apikey") String apiKey,
+  //     @Query("scope") String scope,
+  //     @Query("type") String type,
+  //     @Query("from") int from
+  //     );
+
+
 }

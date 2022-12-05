@@ -27,7 +27,12 @@ class Lobby extends StatelessWidget {
                   primary: true, // 리스트 스크롤 허용
                   shrinkWrap: true, // 아이템 수만큼 높이 설정
                   children: <Widget>[
-                    /// 권한 예제
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.toNamed("/Retrofit_List");
+                      },
+                      child: const Text("Retrofit_List"),
+                    ),
                     ElevatedButton(
                       onPressed: () {
                         Get.toNamed("/Retrofit_Dio_Json");
