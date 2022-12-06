@@ -33,19 +33,24 @@ class RetrofitList extends StatelessWidget {
               KakaoData? kakaoDataInfo = snapshot.data;
 
               if (kakaoDataInfo != null) {
-                print("total_count : "+kakaoDataInfo.meta.total_count.toString());
-                print("pageable_count : "+kakaoDataInfo.meta.pageable_count.toString());
-                print("is_end : "+kakaoDataInfo.meta.is_end.toString());
+                // print("total_count : "+kakaoDataInfo.meta.total_count.toString());
+                // print("pageable_count : "+kakaoDataInfo.meta.pageable_count.toString());
+                // print("is_end : "+kakaoDataInfo.meta.is_end.toString());
+
+                print("KakaoData.meta.is_end : "+kakaoDataInfo.meta.is_end.toString());
+                print("KakaoData.documents.length : "+kakaoDataInfo.documents.length.toString());
+                print("KakaoData.documents.image_url : "+kakaoDataInfo.documents[0].image_url.toString());
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('KakaoData.meta.is_end : ${kakaoDataInfo.meta.is_end.toString()}'),
+                    Text('KakaoData.documents.length : ${kakaoDataInfo.documents.length.toString()}'),
+                    Text('KakaoData.documents.image_url : ${kakaoDataInfo.documents[0].image_url.toString()}'),
+                  ],
+                );
                 return const Text('is here');
               }
-
-
               return const Text('nothing');
-
-              // List<ImageData> imageList = snapshot.documents;
-              // if (imageList != null) {
-              //   return Text('RetrofitList');
-              // }
             }
             return const CircularProgressIndicator();
           },
