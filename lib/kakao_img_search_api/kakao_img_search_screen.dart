@@ -5,8 +5,8 @@ import '../retrofit_dio_json/custom_log_interceptor.dart';
 import 'images_rest_client.dart';
 import 'kakao_data.dart';
 
-class RetrofitList extends StatelessWidget {
-  RetrofitList({Key? key}) : super(key: key);
+class KakaoImgSearchScreen extends StatelessWidget {
+  KakaoImgSearchScreen({Key? key}) : super(key: key);
 
   final dio = Dio()
     ..interceptors.add(

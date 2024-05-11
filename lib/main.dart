@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_function_modules/kakao_img_search_api/kakao_img_search_screen.dart';
 import 'package:flutter_function_modules/splash/lotti_splash_screen.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
 import 'package:flutter_function_modules/video_player/video_swiching/video_swiching_demo.dart';
 import 'package:get/get.dart';
 import 'page/change_status_bar.dart';
 import 'page/custom_circle_dial_indicator.dart';
-import 'page/lobby.dart';
+import 'lobby.dart';
 import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
 
 import 'retrofit_dio_json/retrofit_dio_json.dart';
-import 'retrofit_list/retrofit_list.dart';
+
 
 
 void main() {
@@ -50,8 +51,8 @@ class MyApp extends StatelessWidget {
               page: () => const Lobby(),
               transition: Transition.rightToLeft),
           GetPage(
-              name: "/Retrofit_List",
-              page: () => RetrofitList(),
+              name: "/kakao_img_search_screen",
+              page: () => KakaoImgSearchScreen(),
               transition: Transition.rightToLeft),
           GetPage(
               name: "/Retrofit_Dio_Json",

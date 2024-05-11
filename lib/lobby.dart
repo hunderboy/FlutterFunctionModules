@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_function_modules/permission_handler/permission_handler_page.dart';
 
-import '../dialog/custom_dialog.dart';
+import 'dialog/custom_dialog.dart';
 
 
 
@@ -28,9 +28,9 @@ class Lobby extends StatelessWidget {
                   children: <Widget>[
                     ElevatedButton(
                       onPressed: () {
-                        Get.toNamed("/Retrofit_List");
+                        Get.toNamed("/kakao_img_search_screen");
                       },
-                      child: const Text("Retrofit_List"),
+                      child: const Text("kakao_img_search_screen"),
                     ),
                     ElevatedButton(
                       onPressed: () {
