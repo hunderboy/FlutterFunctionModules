@@ -26,59 +26,37 @@ class Lobby extends StatelessWidget {
                   primary: true, // 리스트 스크롤 허용
                   shrinkWrap: true, // 아이템 수만큼 높이 설정
                   children: <Widget>[
+
                     ElevatedButton(
+                      child: const Text("kakao_img_search_api"),
                       onPressed: () {
-                        Get.toNamed("/kakao_img_search_screen");
+                        Get.toNamed("/kakao_img_search_api");
                       },
-                      child: const Text("kakao_img_search_screen"),
                     ),
                     ElevatedButton(
+                      child: const Text("retrofit_dio_json"),
                       onPressed: () {
-                        Get.toNamed("/Retrofit_Dio_Json");
+                        Get.toNamed("/retrofit_dio_json");
                       },
-                      child: const Text("Retrofit+Dio+Json"),
                     ),
                     /// 권한 예제
                     ElevatedButton(
+                      child: const Text("permission_handler"),
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => PermissionHandlerPage()),
+                          MaterialPageRoute(builder: (context) => const PermissionHandlerPage()),
                         );
                       },
-                      child: const Text("Permission"),
                     ),
-                    /// 다이얼로그 예제
+                    /// sleekCircularSlider_custom_made
                     ElevatedButton(
+                      child: const Text("sleekCircularSlider_custom_made"),
                       onPressed: () {
-                        showDialog(context: context,
-                            builder: (BuildContext context){
-                              return const CustomDialog(
-                                type : "알림",
-                                title: "알림을 켜주세요!",
-                                descriptions: "알림을 켜놓으면 운동의 달성률이 높아져 재활치료의 효과가 극대화 됩니다.",
-                                negativeText: "나중에",
-                                positiveText: "알림 켜기",
-                              );
-                            }
-                        );
+                        Get.toNamed("/sleekCircularSlider_custom_made");
                       },
-                      child: const Text("Custom Dialog"),
                     ),
-                    /// 통증 다이얼 예제
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed("/CustomCircleDialIndicator");
-                      },
-                      child: const Text("통증 다이얼"),
-                    ),
-                    /// 화면 상태바 배경 or 텍스트 색상 변경 예제
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.toNamed("/ChangeStatusBar");
-                      },
-                      child: const Text("상태바 변경"),
-                    ),
+
 
 
                     /// 비디오 기능 테스트 화면

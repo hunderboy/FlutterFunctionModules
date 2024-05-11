@@ -20,7 +20,7 @@ class _LottiSplashScreenState extends State<LottiSplashScreen> with SingleTicker
 
     // 화면이 시작되고 몇초간의 딜레이 후, 다음 화면으로 넘어가는 부분
     Future.delayed(
-      const Duration(seconds: 5),
+      const Duration(seconds: 1),
             () => Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(

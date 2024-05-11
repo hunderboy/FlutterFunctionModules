@@ -1,4 +1,4 @@
-import 'package:flutter_function_modules/model/exercise_item.dart';
+import 'package:flutter_function_modules/video_player/model/exercise_item.dart';
 import 'package:video_player/video_player.dart';
 import 'package:get/get.dart';
 

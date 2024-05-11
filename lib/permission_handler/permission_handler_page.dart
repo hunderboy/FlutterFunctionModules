@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:flutter_function_modules/getx_controller/permission_controller.dart';
+import 'package:flutter_function_modules/permission_handler/permission_controller.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionHandlerPage extends GetView<PermissionController> {

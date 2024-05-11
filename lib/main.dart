@@ -4,8 +4,7 @@ import 'package:flutter_function_modules/splash/lotti_splash_screen.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
 import 'package:flutter_function_modules/video_player/video_swiching/video_swiching_demo.dart';
 import 'package:get/get.dart';
-import 'page/change_status_bar.dart';
-import 'page/custom_circle_dial_indicator.dart';
+import 'sleekCircularSlider_custom_made/custom_circle_dial_indicator.dart';
 import 'lobby.dart';
 import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
@@ -51,28 +50,24 @@ class MyApp extends StatelessWidget {
               page: () => const Lobby(),
               transition: Transition.rightToLeft),
           GetPage(
-              name: "/kakao_img_search_screen",
+              name: "/kakao_img_search_api",
               page: () => KakaoImgSearchScreen(),
               transition: Transition.rightToLeft),
           GetPage(
-              name: "/Retrofit_Dio_Json",
+              name: "/retrofit_dio_json",
               page: () => RetrofitDioJson(),
               transition: Transition.rightToLeft),
           GetPage(
-              name: "/CustomCircleDialIndicator",
-              page: () => const CustomCircleDialIndicator(),
+              name: "/permission_handler",
+              page: () => const PermissionHandlerPage(),
               transition: Transition.rightToLeft),
           GetPage(
-              name: "/PermissionHandler",
-              page: () => const PermissionHandlerPage(),
+              name: "/sleekCircularSlider_custom_made",
+              page: () => const CustomCircleDialIndicator(),
               transition: Transition.rightToLeft),
           GetPage(
               name: "/Ready",
               page: () => const Ready(),
-              transition: Transition.rightToLeft),
-          GetPage(
-              name: "/ChangeStatusBar",
-              page: () => const ChangeStatusBar(),
               transition: Transition.rightToLeft),
 
           /// 비디오플레이어 테스트

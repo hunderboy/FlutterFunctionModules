@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_function_modules/model/exercise_item.dart';
+import 'package:flutter_function_modules/video_player/model/exercise_item.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:video_player/video_player.dart';
 

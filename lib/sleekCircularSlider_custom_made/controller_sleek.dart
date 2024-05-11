@@ -1,8 +1,8 @@
 // import 'dart:math' as math;
 // num radians(num deg) => deg * (math.pi / 180.0);
 import 'package:flutter/material.dart';
+import 'package:flutter_function_modules/sleekCircularSlider_custom_made/sleek_indicator/package/src/appearance.dart';
 import 'package:get/get.dart';
-import 'package:flutter_function_modules/custom_widgets/sleek_indicator/package/src/appearance.dart';
 
 
 class ControllerSleek extends GetxController {
