@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_function_modules/permission_handler/permission_handler_page.dart';
 
-import 'custom_dialog.dart';
+import '../dialog/custom_dialog.dart';
 
 
 
@@ -13,12 +13,11 @@ class Lobby extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Module'),
+        title: const Text('Flutter Function Module'),
       ),
       body: SafeArea(
         child: Center(
-          child: 
-          Container(
+          child: Container(
             margin: const EdgeInsets.all(24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -81,13 +80,16 @@ class Lobby extends StatelessWidget {
                       child: const Text("상태바 변경"),
                     ),
 
+
+                    /// 비디오 기능 테스트 화면
+                    /// todo: 따로 관리 해야함.
                     Container(
                       margin: const EdgeInsets.all(10),
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.lightGreen, // background
-                          onPrimary: Colors.white, // foreground
+                          foregroundColor: Colors.white,
+                          backgroundColor: Colors.lightGreen, // foreground
                         ),
                         child: const Text("운동 플레이 기능 테스트 화면"),
                         onPressed: () {

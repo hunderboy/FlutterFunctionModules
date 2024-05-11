@@ -1,7 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 
+
+
+/// widget Test 를 위한 위젯코드
+/// todo: 블로그 작성을 위해 수정될 예정
 class MyWidget extends StatelessWidget {
   final String title;
   final String message;
