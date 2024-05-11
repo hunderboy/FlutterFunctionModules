@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_function_modules/splash/lotti_splash_screen.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
 import 'package:flutter_function_modules/video_player/video_swiching/video_swiching_demo.dart';
 import 'package:get/get.dart';
 import 'page/change_status_bar.dart';
 import 'page/custom_circle_dial_indicator.dart';
 import 'page/lobby.dart';
-import 'page/splash/splash.dart';
 import 'permission_handler/permission_handler_page.dart';
 import 'package:flutter/services.dart';
 
@@ -18,33 +18,30 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
 
     /// 상태파 컬러 앱 전체 적용
     SystemChrome.setSystemUIOverlayStyle(
         const SystemUiOverlayStyle(
-          /// ios
-          statusBarBrightness: Brightness.dark, // ios 상태바 텍스트 컬러 = white
+          statusBarBrightness: Brightness.dark, /// ios 상태바 텍스트 컬러 = white
         )
     );
 
     return GetMaterialApp(
-        title: 'FunctionModule',
+        title: 'Flutter Function Module',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          // fontFamily: 'Pretendard',   /// 전체 Text 폰트 적용
+          fontFamily: 'Pretendard',   /// 전체 Text 폰트 적용
         ),
-        initialRoute: "/",
-        // initialRoute: "/SplashLottie",
+        initialRoute: "/lotti_splash",
 
         getPages: [
 
-          /// 앱 첫 시작 로딩페이지
-          GetPage(
-              name: "/SplashLottie",
-              page: () => Splash(),
+          GetPage( /// 앱 첫 시작 로딩페이지
+              name: "/lotti_splash",
+              page: () => const LottiSplashScreen(),
               curve: const Cubic(0.4, 0.0, 0.4, 0.0),
               transition: Transition.rightToLeft),
 
