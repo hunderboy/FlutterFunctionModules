@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_function_modules/animated_container/test_page_animated_container.dart';
 import 'package:flutter_function_modules/kakao_img_search_api/kakao_img_search_screen.dart';
 import 'package:flutter_function_modules/splash/lotti_splash_screen.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
@@ -37,6 +38,8 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: "/lotti_splash",
 
+        // todo: 로딩 페이지 이외에 더이상 getPages 는 사용하지 않는다.
+        // todo: 추후에 GetX 제거 작업 해야함.
         getPages: [
 
           GetPage( /// 앱 첫 시작 로딩페이지
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
 
           GetPage(
               name: "/",
-              page: () => const Lobby(),
+              page: () => Lobby(),
               transition: Transition.rightToLeft),
           GetPage(
               name: "/kakao_img_search_api",
