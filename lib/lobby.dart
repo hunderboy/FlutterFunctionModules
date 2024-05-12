@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_function_modules/animated_container/test_page_animated_container.dart';
 import 'package:flutter_function_modules/indexed_stack/test_page_indexedstack.dart';
+import 'package:flutter_function_modules/keyboard_test/test_page_keyboard.dart';
+import 'package:flutter_function_modules/radio_button/test_page_radio_button.dart';
 import 'package:get/get.dart';
 import 'package:flutter_function_modules/permission_handler/permission_handler_page.dart';
 
@@ -106,6 +108,18 @@ class Lobby extends StatelessWidget {
                   navigateToTestPage(context, const TestPageIndexedStack());
                 },
                 child: const Text('IndexedStack - BottomNavigationBar'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  navigateToTestPage(context, const TestPageRadioButton());
+                },
+                child: const Text('Radio Button'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  navigateToTestPage(context, const TestPageKeyboard());
+                },
+                child: const Text('Keyboard Test'),
               ),
 
 
