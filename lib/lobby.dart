@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_function_modules/animated_container/test_page_animated_container.dart';
+import 'package:flutter_function_modules/custom_intro_slide/onboarding_screen.dart';
 import 'package:flutter_function_modules/indexed_stack/test_page_indexedstack.dart';
 import 'package:flutter_function_modules/keyboard_test/test_page_keyboard.dart';
 import 'package:flutter_function_modules/radio_button/test_page_radio_button.dart';
@@ -121,6 +122,13 @@ class Lobby extends StatelessWidget {
                 },
                 child: const Text('Keyboard Test'),
               ),
+              ElevatedButton(
+                onPressed: () {
+                  navigateToTestPage(context, const OnBoardingScreen());
+                },
+                child: const Text('Custom Intro Slide'),
+              ),
+
 
 
 /// Todo ---------------------------------------------------------------------
@@ -144,8 +152,6 @@ class Lobby extends StatelessWidget {
                 },
                 child: const Text('해야할 모듈 작업'),
               ),
-
-
             ],
           ),
         )

@@ -86,6 +86,7 @@ flutter:
     - assets/image/pain_level_face/
     - assets/app_icon/
     - assets/lottie/
+    - assets/onboarding_test_img/
     - assets/svg/empty/
     - assets/svg/icon/
     - assets/svg/logo/
