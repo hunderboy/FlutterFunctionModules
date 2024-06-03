@@ -18,7 +18,7 @@ class _LottiSplashScreenState extends State<LottiSplashScreen> with SingleTicker
     super.initState();
     _controller = AnimationController(vsync: this);
 
-    // 화면이 시작되고 몇초간의 딜레이 후, 다음 화면으로 넘어가는 부분
+    /// 화면이 시작되고 몇초간의 딜레이 후, 다음 화면으로 넘어가는 부분
     Future.delayed(
       const Duration(seconds: 1),
             () => Navigator.pushAndRemoveUntil(
@@ -38,46 +38,33 @@ class _LottiSplashScreenState extends State<LottiSplashScreen> with SingleTicker
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.amber,
       body: Container(
         alignment: Alignment.center,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              // height: 300,
-              // width: 300,
-              child:
-              Lottie.asset(
-                // 'assets/lottie/test.json',
-                // 'assets/lottie/lf20_uekpwrsv.json',
-                  "assets/lottie/8546-aperture-logo-loading.json",
-                  controller: _controller, onLoaded: (composition) {
-                    _controller.addStatusListener((status) {
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Lottie.asset(
+          // 'assets/lottie/test.json',
+          // 'assets/lottie/lf20_uekpwrsv.json',
+          "assets/lottie/8546-aperture-logo-loading.json",
+          controller: _controller, onLoaded: (composition) {
+            _controller.addStatusListener((status) {
+              // 애니메이션이 사라지면 다시 생성
+              if (status == AnimationStatus.dismissed) {
+                _controller.forward();
+              } else if (status == AnimationStatus.completed){
+                _controller.reverse();
+              }
+            });
 
-                      // 애니메이션이 사라지면 다시 생성
-                      if (status == AnimationStatus.dismissed) {
-                        _controller.forward();
-                      } else if (status == AnimationStatus.completed){
-                        _controller.reverse();
-                      }
-
-                    });
-
-                    // Configure the AnimationController with the duration of the
-                    // Lottie file and start the animation.
-                    _controller
-                      ..duration = composition.duration
-                      ..forward();
-                  }
-              )
-            )
-          ],
-        ),
-
+            // Configure the AnimationController with the duration of the
+            // Lottie file and start the animation.
+            _controller
+              ..duration = composition.duration
+              ..forward();
+          }
+        )
       )
     );
-
   }
 }

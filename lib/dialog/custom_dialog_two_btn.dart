@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 
@@ -73,10 +74,8 @@ class CustomDialogTwoBtn extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(top: 25),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                    Expanded(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: const Color(0xff747474), backgroundColor: Colors.white, padding: const EdgeInsets.all(14),
@@ -84,11 +83,10 @@ class CustomDialogTwoBtn extends StatelessWidget {
                           elevation: 0, // foreground
                         ),
                         child: Text(negativeText, style: const TextStyle(fontSize: 14)),
-
                         onPressed: () {
                           if(negativeRoute == "back"){
                             Navigator.pop(context); // 뒤로가기
-                            Get.back();
+                            // Get.back();
                           }else{
                             // Get.find<ControllerLobby>().increase2();
                             Navigator.pushNamed(context, negativeRoute);
@@ -96,23 +94,21 @@ class CustomDialogTwoBtn extends StatelessWidget {
                         },
                       ),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.35,
+                    const Gap(20),
+                    Expanded(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           foregroundColor: Colors.white, backgroundColor: const Color(0xff07BEB8), padding: const EdgeInsets.all(14),
                           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14))), // foreground
                         ),
                         child: Text(positiveText, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800)),
-
                         onPressed: () {
                           if (positiveRoute == 'pop') {
                             Navigator.pop(context); // 다이얼로그 끔
                           } else if(positiveRoute == 'setting') {
-
+                      
                           } else {
                             // Navigator.pushNamed(context, positiveRoute);
-
                           }
                         },
                       ),
