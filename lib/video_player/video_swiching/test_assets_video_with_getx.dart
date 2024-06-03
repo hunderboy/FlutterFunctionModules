@@ -58,9 +58,7 @@ class TestAssetsVideo extends GetView<ControllerTestAssetsVideo> {
                   child: const Text("Video Stream 0"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.yellow,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.yellow, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),
@@ -76,9 +74,7 @@ class TestAssetsVideo extends GetView<ControllerTestAssetsVideo> {
                   child: const Text("Video Stream 1"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.red,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.red, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),
@@ -94,9 +90,7 @@ class TestAssetsVideo extends GetView<ControllerTestAssetsVideo> {
                   child: const Text("Video Stream 2"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.green,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.green, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),

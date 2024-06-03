@@ -79,11 +79,9 @@ class CustomDialogTwoBtn extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.3,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(14),
+                          foregroundColor: const Color(0xff747474), backgroundColor: Colors.white, padding: const EdgeInsets.all(14),
                           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14))),
-                          elevation: 0,
-                          primary: Colors.white, // background
-                          onPrimary: const Color(0xff747474), // foreground
+                          elevation: 0, // foreground
                         ),
                         child: Text(negativeText, style: const TextStyle(fontSize: 14)),
 
@@ -102,10 +100,8 @@ class CustomDialogTwoBtn extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.35,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(14),
-                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14))),
-                          primary: const Color(0xff07BEB8), // background
-                          onPrimary: Colors.white, // foreground
+                          foregroundColor: Colors.white, backgroundColor: const Color(0xff07BEB8), padding: const EdgeInsets.all(14),
+                          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(14))), // foreground
                         ),
                         child: Text(positiveText, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800)),
 

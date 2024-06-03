@@ -27,7 +27,9 @@ class TestListAnimation extends GetView<ControllerTestListAnimation>  {
                   builder: (controller) {
                     return
                       Visibility(
-                        child: Text('이 글자를 안보이게 하고 싶습니다.', style: Theme.of(context).textTheme.headline6,),
+                        child: Text('이 글자를 안보이게 하고 싶습니다.',
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        ),
                         visible: controller.visibility,
                       );
                   }
@@ -39,9 +41,7 @@ class TestListAnimation extends GetView<ControllerTestListAnimation>  {
                   child: const Text("다음영상재생"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.yellow,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.yellow, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),
@@ -56,9 +56,7 @@ class TestListAnimation extends GetView<ControllerTestListAnimation>  {
                   child: const Text("일시정지"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.redAccent,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.redAccent, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),

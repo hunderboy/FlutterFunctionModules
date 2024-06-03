@@ -56,13 +56,11 @@ class CustomDialog extends StatelessWidget {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.only(top:15 ,bottom:15 ,left:30 ,right:30 ),
+                    foregroundColor: Colors.black, backgroundColor: Colors.white, padding: const EdgeInsets.only(top:15 ,bottom:15 ,left:30 ,right:30 ),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(14)),
                     ),
-                    elevation: 0,
-                    primary: Colors.white, // background
-                    onPrimary: Colors.black, // foreground
+                    elevation: 0, // foreground
                   ),
                   child: Text(negativeText, style: const TextStyle(fontSize: 16)),
                   onPressed: () {
@@ -71,12 +69,10 @@ class CustomDialog extends StatelessWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.only(top:15 ,bottom:15 ,left:30 ,right:30 ),
+                    foregroundColor: Colors.white, backgroundColor: const Color(0xff07BEB8), padding: const EdgeInsets.only(top:15 ,bottom:15 ,left:30 ,right:30 ),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(14)),
-                    ),
-                    primary: const Color(0xff07BEB8), // background
-                    onPrimary: Colors.white, // foreground
+                    ), // foreground
                   ),
                   child: Text(positiveText, style: const TextStyle(fontSize: 16)),
                   onPressed: () {

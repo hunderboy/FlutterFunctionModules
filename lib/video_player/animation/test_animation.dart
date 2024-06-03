@@ -26,9 +26,7 @@ class TestAnimation extends GetView<ControllerTestAnimation>  {
                   child: const Text("다음영상재생"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: Colors.yellow,
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: Colors.yellow, elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),

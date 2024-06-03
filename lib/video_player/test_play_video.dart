@@ -72,9 +72,7 @@ class TestPlayVideo extends GetView<ControllerTestPlayVideo> {
                   child: const Text("다음영상재생"),
                   style:
                   ElevatedButton.styleFrom(
-                    elevation: 0,
-                    primary: const Color(0xff07beb8), // 베경색
-                    onPrimary: Colors.white,          // 글자색
+                    foregroundColor: Colors.white, backgroundColor: const Color(0xff07beb8), elevation: 0,          // 글자색
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                   ),
