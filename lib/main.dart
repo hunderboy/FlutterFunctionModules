@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_function_modules/kakao_img_search_api/kakao_img_search_screen.dart';
+import 'package:flutter_function_modules/share_extension/share_widget.dart';
 import 'package:flutter_function_modules/splash/lotti_splash_screen.dart';
 import 'package:flutter_function_modules/permission_handler/ready.dart';
 import 'package:flutter_function_modules/video_player/video_swiching/video_swiching_demo.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/splash',
         routes: {
           '/splash': (context) => const LottiSplashScreen(),
+          '/share': (context) => const ShareWidget(),
           '/': (context) => Lobby(),
           '/lobby': (context) => Lobby(),
           '/kakao_img_search_api': (context) => KakaoImgSearchScreen(),
