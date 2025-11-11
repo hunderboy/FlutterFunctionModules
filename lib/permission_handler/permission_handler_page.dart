@@ -4,13 +4,26 @@ import 'package:get/get.dart';
 import 'package:flutter_function_modules/permission_handler/permission_controller.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class PermissionHandlerPage extends GetView<PermissionController> {
+class PermissionHandlerPage extends StatefulWidget {
   const PermissionHandlerPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    Get.put(PermissionController());
+  _PermissionHandlerPageState createState() => _PermissionHandlerPageState();
+}
+
+class _PermissionHandlerPageState extends State<PermissionHandlerPage> {
+  late PermissionController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = Get.put(PermissionController());
     Permission.camera.request();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    controller.setContext(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -32,7 +45,7 @@ class PermissionHandlerPage extends GetView<PermissionController> {
                 onPressed: () {
                   controller.getCameraPermissionCheck();
                 },
-                child: Text("Camera"),
+                child: const Text("Camera"),
               ),
               // ElevatedButton(
               //   onPressed: () {

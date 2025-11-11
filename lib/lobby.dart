@@ -4,7 +4,6 @@ import 'package:flutter_function_modules/custom_intro_slide/onboarding_screen.da
 import 'package:flutter_function_modules/indexed_stack/test_page_indexedstack.dart';
 import 'package:flutter_function_modules/keyboard_test/test_page_keyboard.dart';
 import 'package:flutter_function_modules/radio_button/test_page_radio_button.dart';
-import 'package:get/get.dart';
 import 'package:flutter_function_modules/permission_handler/permission_handler_page.dart';
 
 import 'dialog/custom_dialog.dart';
@@ -71,13 +70,13 @@ class Lobby extends StatelessWidget {
               ElevatedButton(
                 child: const Text("kakao_img_search_api"),
                 onPressed: () {
-                  Get.toNamed("/kakao_img_search_api");
+                  Navigator.pushNamed(context, "/kakao_img_search_api");
                 },
               ),
               ElevatedButton(
                 child: const Text("retrofit_dio_json"),
                 onPressed: () {
-                  Get.toNamed("/retrofit_dio_json");
+                  Navigator.pushNamed(context, "/retrofit_dio_json");
                 },
               ),
               /// 권한 예제
@@ -94,7 +93,7 @@ class Lobby extends StatelessWidget {
               ElevatedButton(
                 child: const Text("sleekCircularSlider_custom_made"),
                 onPressed: () {
-                  Get.toNamed("/sleekCircularSlider_custom_made");
+                  Navigator.pushNamed(context, "/sleekCircularSlider_custom_made");
                 },
               ),
               /// animated_container

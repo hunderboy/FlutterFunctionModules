@@ -50,7 +50,7 @@ class CustomCircleDialIndicator extends GetView<ControllerSleek> {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onPressed: () {
-              Get.back();
+              Navigator.pop(context);
             },
           ),
         ),

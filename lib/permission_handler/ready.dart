@@ -5,11 +5,9 @@ class Ready extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: const Center(
-          child: Text('Ready'),
-        ),
+    return const Scaffold(
+      body: Center(
+        child: Text('Ready'),
       ),
     );
   }
