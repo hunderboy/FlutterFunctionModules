@@ -9,26 +9,34 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         print("viewDidLoad 출력")
         super.viewDidLoad()
-
+        
+        // 즉시 Flutter UI 표시
         showFlutter()
     }
 
-
-    func showFlutter() {
+    private func showFlutter() {
         print("showFlutter 출력")
 
+        // Flutter Engine을 동기적으로 초기화
+        let flutterEngine = FlutterEngine(name: "ShareExtensionEngine")
+        flutterEngine.run()
+        
+        // Flutter ViewController 생성
         let flutterViewController = FlutterViewController(
-            project: nil,
-            initialRoute: "/share",
+            engine: flutterEngine,
             nibName: nil,
             bundle: nil
         )
+        flutterViewController.setInitialRoute("/share")
 
+        // Child View Controller로 추가
         addChild(flutterViewController)
         view.addSubview(flutterViewController.view)
         flutterViewController.view.frame = view.bounds
-
+        flutterViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         flutterViewController.didMove(toParent: self)
+        
+        print("Flutter UI 표시 완료")
     }
 }
 
